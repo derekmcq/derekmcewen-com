@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { STIX_Two_Text } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const stixTwoText = STIX_Two_Text({ subsets: ["latin"] });
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={stixTwoText.className}>
       <body className="bg-[#1a1a1a] text-zinc-200 antialiased">
+        <Analytics />
         <div className="max-w-[78ch] mx-auto p-8 pt-0 md:pt-8 min-h-screen flex flex-col justify-between">
           <main>{children}</main>
           <footer className="py-8">
